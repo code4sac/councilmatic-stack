@@ -1,6 +1,7 @@
 # councilmatic-stack
 
 The goal of this project is to get the imago project, scraper-us-municipal project, and councilmatic-starter-template all working together.
+![IMG_20190619_200810](https://user-images.githubusercontent.com/4978032/59816096-a5db2980-92cf-11e9-8f64-ee62fcf5f610.jpg)
 
 ## Requirements
 
