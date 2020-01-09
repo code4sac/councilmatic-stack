@@ -6,7 +6,7 @@ The goal of this project is to get the imago project, scraper-us-municipal proje
 ## Requirements
 
 1. Install docker an docker-compose if you do not have them installed
-2. Clone this scrapers project into the the folder `scrapers` in this project: https://github.com/datamade/scrapers-us-municipal.
+2. Clone this scrapers project into the the folder `scrapers` in this project: https://github.com/feydan/scrapers-us-municipal.
 3. Clone this sacramento-councilmatic project into the folder `sacramento-councilmatic` into this project: https://github.com/code4sac/sacramento-councilmatic
 
 ## Initializing
@@ -20,6 +20,10 @@ The goal of this project is to get the imago project, scraper-us-municipal proje
 1. Ensure the containers are running. If they are still running from the Initializing step above continue to step 2. Otherwise start the containers: `docker-compose up`.
 2. `docker-compose exec scrapers /bin/bash` (ssh's into the scrapers project)
 3. `pupa update sacramento` (runs the update script)
+
+## Todo
+
+1. Fix bootstrapping so that you do not need to run the init scripts and have the update script automatically run on a cron job
 
 ## Resources
 
