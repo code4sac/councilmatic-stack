@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   postgresql:
@@ -10,8 +10,16 @@ services:
   scrapers:
     build: .
     ports:
-     - "8000:8000"
+      - "8000:8000"
     volumes:
       - "./scrapers:/home/pupa/scrapers"
     depends_on:
-     - postgresql
+      - postgresql
+  councilmatic:
+    build: ./sacramento-councilmatic
+    ports:
+      - "8001:8000"
+    volumes:
+      - "./sacramento-councilmatic:/home/pupa/councilmatic"
+    depends_on:
+      - postgresql
