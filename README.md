@@ -14,12 +14,18 @@ The goal of this project is to get the imago project, scraper-us-municipal proje
 1. Run `docker-compose up` to start the database and scrapers containers. Keep this terminal window running.
 2. Run the initial migration for scrapers `docker-compose exec scrapers pupa dbinit us`
 3. Run the initial migration for councilmatic `docker-compose exec councilmatic python manage.py migrate`
+4. Run the initial cache table creation `docker-compose exec councilmatic python manage.py createcachetable`
 
 ## Running the scrapers
 
 1. Ensure the containers are running. If they are still running from the Initializing step above continue to step 2. Otherwise start the containers: `docker-compose up`.
 2. `docker-compose exec scrapers /bin/bash` (ssh's into the scrapers project)
 3. `pupa update sacramento` (runs the update script)
+4. `exit` ssh into scrapers
+
+## Start Web Server
+1. `docker-compose exec councilmatic python manage.py runserver 8001` to begin the server
+2. Go to `localhost:8001` in your browser
 
 ## Todo
 
