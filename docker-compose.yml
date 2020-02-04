@@ -2,6 +2,9 @@ version: "3"
 
 services:
   postgresql:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
     build: ./postgres
     volumes:
       - "./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
