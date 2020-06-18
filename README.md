@@ -8,14 +8,14 @@ The goal of this project is to get the imago project, scraper-us-municipal proje
 1. Install docker an docker-compose if you do not have them installed
 2. Clone this scrapers project into the the folder `scrapers` in this project: https://github.com/feydan/scrapers-us-municipal.
 3. Clone this sacramento-councilmatic project into the folder `sacramento-councilmatic` into this project: https://github.com/code4sac/sacramento-councilmatic and switch to the `councilmatic-stack` branch
-4. Run the initial cache table creation `docker-compose exec councilmatic python manage.py createcachetable`
 
 ## Initializing
 
 1. Run `docker-compose up` to start the database and scrapers containers. Keep this terminal window running.
 2. Run the initial migration for scrapers `docker-compose exec scrapers pupa dbinit us`
 3. Run the initial migration for councilmatic `docker-compose exec councilmatic python manage.py migrate`
-4. In the `sacramento-councilmatic/councilmatic` folder, copy `settings_deployment.py.example` to `settings_deployment.py`, and when developing locally change the `DEBUG = False` line to `DEBUG = True`
+4. Run the initial cache table creation `docker-compose exec councilmatic python manage.py createcachetable`
+5. In the `sacramento-councilmatic/councilmatic` folder, copy `settings_deployment.py.example` to `settings_deployment.py`, and when developing locally change the `DEBUG = False` line to `DEBUG = True`
 
 ## Running the scrapers
 
