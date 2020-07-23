@@ -15,11 +15,21 @@ services:
       - "./scrapers:/home/pupa/scrapers"
     depends_on:
       - postgresql
+  api:
+    build: ./api
+    ports:
+      - "8002:8000"
+    volumes:
+      - "./api:/app"
+      - "./site-packages-api:/home/pupa/.local/lib/python3.6/site-packages"
+    depends_on:
+      - postgresql
   councilmatic:
     build: ./sacramento-councilmatic
     ports:
       - "8001:8000"
     volumes:
       - "./sacramento-councilmatic:/home/pupa/councilmatic"
+      - "./site-packages:/home/pupa/.local/lib/python3.7/site-packages"
     depends_on:
       - postgresql
