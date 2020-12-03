@@ -29,6 +29,13 @@ The goal of this project is to get the imago project, scraper-us-municipal proje
 3. `pupa update sacramento` (runs the update script)
 4. `exit` exit scrapers
 
+## Importing data into Councilmatic
+
+1. Ensure the containers are running. If they are still running from the Initializing step above continue to step 2. Otherwise start the containers: `docker-compose up`
+2. `docker-compose exec scrapers /bin/bash` (ssh's into the councilmatic project)
+3. `python manage.py import_data`
+4. `exit` exit the scrapers
+
 ## Accessing the web application
 
 The web application is accessible at http://localhost:8001/ in your browser.
